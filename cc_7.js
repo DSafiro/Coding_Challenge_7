@@ -47,7 +47,7 @@ calculateShippingCost(5, "Canada", false); // Inputs values and produces expecte
 
 // Task 5: Business Loan Interest Calculation
 function calculateLoanInterest (principal, rate, years) {
-    interest = principal * rate * years; // Calculates interest by multiplying principal, rate, and years together
+    let interest = principal * rate * years; // Calculates interest by multiplying principal, rate, and years together
     console.log(`Total Interest: $${interest.toFixed(2)}`); // Outputs and rounds total interest
     return interest; // Returns total interest
 }; // Declares a function that calculates total interest
@@ -75,9 +75,9 @@ console.log(`Current Balance: -$${budget(200)}`); // Inputs values and produces 
 
 // Task 8: Business Growth Projection
 function calculateGrowth (years, revenue) {
-    if (years >= 10) return revenue; // If years if greater than or equal to 10 -> returns initial revenue
+    if (years >= 10) return revenue; // If years is greater than or equal to 10 -> returns initial revenue
     projectedRevenue = calculateGrowth(years + 1, revenue * 1.05); // Calculates projected revenue by increasing revenue by 5% yearly, adding 1 year to counter until it reaches year 10
     return projectedRevenue; //  Returns projected revenue
-}; // Declares recursive function calls itself and calculates projected revenue
+}; // Declares recursive function that calls itself and calculates projected revenue
 console.log(`Projected Revenue: $${calculateGrowth(8, 1000).toFixed(2)}`); // Inputs values and produces expected output of $1102.50
 console.log(`Projected Revenue: $${calculateGrowth(5, 5000).toFixed(2)}`); // Inputs values and produces expected output of $6381.41
