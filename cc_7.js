@@ -60,3 +60,15 @@ const filterHighValueTransactions = (transactions, filterFunction) => {
     return transactions.filter(filterFunction); // Utilizes filter function to filter transactions above $1000
 }; // Declares function that filters transactions
 console.log(`Filtered Transactions: ${filterHighValueTransactions(transactions, amount => amount > 1000)}`); // Inputs filter and produces expected filtered outputs of [1200, 3000, 2200]
+
+// Task 7: Budget Tracker
+function createBudgetTracker () {
+    let totalBalance = 0; // Declares total balance as a variable and sets initial amount to zero
+    return function (expense) {
+        totalBalance += expense; // Adds expense to total balance
+        return totalBalance; // Returns total balance
+    }; // Declares function that adds expenses
+}; // Declares a function that tracks budget
+let budget = createBudgetTracker(); // Declares budget by returning createBudgetTracker function
+console.log(`Current Balance: -$${budget(300)}`); // Inputs values and produces expected output of -$300
+console.log(`Current Balance: -$${budget(200)}`); // Inputs values and produces expected output of -$500
