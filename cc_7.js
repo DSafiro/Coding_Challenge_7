@@ -25,7 +25,7 @@ const calculateLoyaltyDiscount = (amount, years) => {
     } else if (years < 3) { // If years is less than 3 -> 5% discount
         discountPrice = amount * 0.95;
     };
-    console.log(`Discounted Price: $${discountPrice}`); // Outputs discounted price
+    console.log(`Discounted Price: $${discountPrice.toFixed(2)}`); // Outputs discounted price
 }; // Declares arrow function that calculates discounted price 
 calculateLoyaltyDiscount(100, 6); // Inputs values and produces expected result of $85
 calculateLoyaltyDiscount(200, 2); // Inputs values and produces expected result of $190
@@ -72,3 +72,12 @@ function createBudgetTracker () {
 let budget = createBudgetTracker(); // Declares budget by returning createBudgetTracker function
 console.log(`Current Balance: -$${budget(300)}`); // Inputs values and produces expected output of -$300
 console.log(`Current Balance: -$${budget(200)}`); // Inputs values and produces expected output of -$500
+
+// Task 8: Business Growth Projection
+function calculateGrowth (years, revenue) {
+    if (years >= 10) return revenue; // If years if greater than or equal to 10 -> returns initial revenue
+    projectedRevenue = calculateGrowth(years + 1, revenue * 1.05); // Calculates projected revenue by increasing revenue by 5% yearly, adding 1 year to counter until it reaches year 10
+    return projectedRevenue; //  Returns projected revenue
+}; // Declares recursive function calls itself and calculates projected revenue
+console.log(`Projected Revenue: $${calculateGrowth(8, 1000).toFixed(2)}`); // Inputs values and produces expected output of $1102.50
+console.log(`Projected Revenue: $${calculateGrowth(5, 5000).toFixed(2)}`); // Inputs values and produces expected output of $6381.41
