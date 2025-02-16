@@ -53,3 +53,10 @@ function calculateLoanInterest (principal, rate, years) {
 }; // Declares a function that calculates total interest
 calculateLoanInterest(1000, 0.05, 3); // Inputs values and produces expected output of $150.00
 calculateLoanInterest(5000, 0.07, 5); // Inputs values and produces expected output of $1750.00
+
+// Task 6: Filtering High-Value Transactions
+let transactions = [500, 1200, 3000, 800, 2200]; // Initial transactions array
+const filterHighValueTransactions = (transactions, filterFunction) => {
+    return transactions.filter(filterFunction); // Utilizes filter function to filter transactions above $1000
+}; // Declares function that filters transactions
+console.log(`Filtered Transactions: ${filterHighValueTransactions(transactions, amount => amount > 1000)}`); // Inputs filter and produces expected filtered outputs of [1200, 3000, 2200]
