@@ -29,3 +29,18 @@ const calculateLoyaltyDiscount = (amount, years) => {
 }; // Declares arrow function that calculates discounted price 
 calculateLoyaltyDiscount(100, 6); // Inputs values and produces expected result of $85
 calculateLoyaltyDiscount(200, 2); // Inputs values and produces expected result of $190
+
+// Task 4: Product Shipping Cost Calculation
+function calculateShippingCost (weight, location, expedited = false) {
+    if (location === "USA") { // If location equals "USA" -> Shipping cost is $5 + $0.5 per lb
+        shippingCost = 5 + (0.5 * weight);
+    } else if (location === "Canada") { // If location equals "Canada" -> Shipping cost is $10 + $0.7 per lb
+        shippingCost = 10 + (0.7 * weight);
+    } if (expedited === true) { // If expedited equals true -> Additional $10 fee
+        shippingCost = shippingCost + 10;
+    };
+    console.log(`Shipping Cost: $${shippingCost.toFixed(2)}`); // Outputs shipping cost and rounds to two decimal points
+    return shippingCost; // Returns shipping cost
+}; // Declares a function that calculates shipping cost
+calculateShippingCost(10, "USA", true); // Inputs values and produces expected output of $20.00
+calculateShippingCost(5, "Canada", false); // Inputs values and produces expected output of $13.50
