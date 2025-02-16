@@ -44,3 +44,12 @@ function calculateShippingCost (weight, location, expedited = false) {
 }; // Declares a function that calculates shipping cost
 calculateShippingCost(10, "USA", true); // Inputs values and produces expected output of $20.00
 calculateShippingCost(5, "Canada", false); // Inputs values and produces expected output of $13.50
+
+// Task 5: Business Loan Interest Calculation
+function calculateLoanInterest (principal, rate, years) {
+    interest = principal * rate * years; // Calculates interest by multiplying principal, rate, and years together
+    console.log(`Total Interest: $${interest.toFixed(2)}`); // Outputs and rounds total interest
+    return interest; // Returns total interest
+}; // Declares a function that calculates total interest
+calculateLoanInterest(1000, 0.05, 3); // Inputs values and produces expected output of $150.00
+calculateLoanInterest(5000, 0.07, 5); // Inputs values and produces expected output of $1750.00
